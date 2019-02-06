@@ -12,6 +12,7 @@ ENV LANG de_DE.UTF8
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y nano less anacron dirvish unattended-upgrades && apt-get clean
 
 RUN mv /etc/dirvish /etc/dirvish_default
+RUN mkdir /etc/dirvish
 RUN touch /var/log/cron.log
 
 VOLUME /etc/dirvish
