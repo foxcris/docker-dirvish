@@ -14,6 +14,11 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN mv /etc/dirvish /etc/dirvish_default
 RUN touch /var/log/cron.log
 
+VOLUME /etc/dirvish
+VOLUME /var/log
+VOLUME /root
+VOLUME /backup
+
 COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
