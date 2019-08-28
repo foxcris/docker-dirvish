@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('Clone repository') {
       steps {
         git(url: 'https://github.com/foxcris/docker-dirvish.git', branch: 'master')
       }
